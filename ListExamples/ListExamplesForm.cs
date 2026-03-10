@@ -14,5 +14,19 @@ namespace ListExamples
             this.Close();
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompanyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
