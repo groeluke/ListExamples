@@ -73,6 +73,7 @@
             SubmitButton.TabIndex = 1;
             SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // InfoGroupBox
             // 
