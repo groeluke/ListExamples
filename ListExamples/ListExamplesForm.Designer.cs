@@ -39,8 +39,8 @@
             FirstNameLabel = new Label();
             FirstNameTextBox = new TextBox();
             ListGroupBox = new GroupBox();
-            ComboBox = new ComboBox();
             ListBox = new ListBox();
+            ComboBox = new ComboBox();
             InfoGroupBox.SuspendLayout();
             ListGroupBox.SuspendLayout();
             SuspendLayout();
@@ -149,14 +149,6 @@
             ListGroupBox.TabIndex = 4;
             ListGroupBox.TabStop = false;
             // 
-            // ComboBox
-            // 
-            ComboBox.FormattingEnabled = true;
-            ComboBox.Location = new Point(6, 15);
-            ComboBox.Name = "ComboBox";
-            ComboBox.Size = new Size(182, 33);
-            ComboBox.TabIndex = 0;
-            // 
             // ListBox
             // 
             ListBox.FormattingEnabled = true;
@@ -164,6 +156,15 @@
             ListBox.Name = "ListBox";
             ListBox.Size = new Size(454, 279);
             ListBox.TabIndex = 1;
+            ListBox.SelectedIndexChanged += ListBox_SelectedIndexChanged;
+            // 
+            // ComboBox
+            // 
+            ComboBox.FormattingEnabled = true;
+            ComboBox.Location = new Point(6, 15);
+            ComboBox.Name = "ComboBox";
+            ComboBox.Size = new Size(182, 33);
+            ComboBox.TabIndex = 0;
             // 
             // ListExamplesForm
             // 

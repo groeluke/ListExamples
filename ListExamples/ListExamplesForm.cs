@@ -13,8 +13,11 @@ namespace ListExamples
         {
             List<string> names = new List<string>();
             names.Add("Bob");
-            names.Add("Sally");
+            names.Add("Jack");
             names.Add("Jasmine");
+            this.Text = names.Count.ToString();
+            names.Remove("Jack");
+            this.Text = names.Count.ToString();
         }
 
 
@@ -44,6 +47,12 @@ namespace ListExamples
         private void CompanyTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            ListExampleMethod(sender, e);
         }
     }
 }
