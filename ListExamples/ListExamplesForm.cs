@@ -23,10 +23,5 @@ namespace ListExamples
         {
 
         }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
-}
