@@ -20,6 +20,14 @@ namespace ListExamples
             this.Text = names.Count.ToString();
         }
 
+        void AddItemToListBox(object sender, EventArgs e)
+        {
+            if (CompanyTextBox.Text != "")
+            {
+                ListBox.Items.Add(CompanyTextBox.Text);
+                CompanyTextBox.Clear();
+            }
+        }
 
 
         // Event handlers below this point----------------------------------------------
