@@ -120,7 +120,7 @@
             LastNameTextBox.Location = new Point(57, 79);
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(196, 31);
-            LastNameTextBox.TabIndex = 2;
+            LastNameTextBox.TabIndex = 1;
             LastNameTextBox.TextChanged += textBox2_TextChanged;
             // 
             // FirstNameLabel
@@ -165,6 +165,7 @@
             ComboBox.Name = "ComboBox";
             ComboBox.Size = new Size(182, 33);
             ComboBox.TabIndex = 0;
+            ComboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
             // ListExamplesForm
             // 

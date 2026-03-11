@@ -1,5 +1,7 @@
 
 
+using System.CodeDom.Compiler;
+
 namespace ListExamples
 {
     public partial class ListExamplesForm : Form
@@ -20,26 +22,47 @@ namespace ListExamples
             this.Text = names.Count.ToString();
         }
 
-        void AddItemToListBox(object sender, EventArgs e)
+        void AddItemToListBox()
         {
-            if (CompanyTextBox.Text != "")
-            {
-                ListBox.Items.Add(CompanyTextBox.Text);
-                CompanyTextBox.Clear();
-            }
+            ListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
         }
 
+        void AddItemToComboBox()
+        {
+            ComboBox.Items.Add($"{LastNameTextBox.Text}, {FirstNameTextBox.Text}");
+            if(ComboBox.Items.Count > 0)
+            {
+                ComboBox.SelectedIndex = 0;
+                
+            }   
+        }
+
+        void ClearListBox()
+        {
+            ListBox.Items.Clear();
+            ComboBox.Items.Clear();
+        }
+
+        void ClearTextBoxes()
+        {
+            FirstNameTextBox.Text = "";
+            LastNameTextBox.Text = "";
+            CompanyTextBox.Text = "";
+        }
 
         // Event handlers below this point----------------------------------------------
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             ListExampleMethod(sender, e);
+            AddItemToListBox();
+            AddItemToComboBox();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            ClearListBox();
+            ClearTextBoxes();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -59,8 +82,21 @@ namespace ListExamples
 
         private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            ListExampleMethod(sender, e);
+            //isolate company
+            string[] temp = ListBox.SelectedItem.ToString().Split(" ");
+            CompanyTextBox.Text = temp[1];
+            //isolate first and last name
+            temp = temp[0].Split(",");
+            FirstNameTextBox.Text = temp[1];
+            LastNameTextBox.Text = temp[0];
+        }
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //select the corosponding entry in the list box
+            ListBox.SelectedIndex = ComboBox.SelectedIndex;
+            //this.Text = ComboBox.SelectedIndex.ToString();
         }
     }
 }
