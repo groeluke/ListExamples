@@ -121,7 +121,7 @@
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(196, 31);
             LastNameTextBox.TabIndex = 1;
-            LastNameTextBox.TextChanged += textBox2_TextChanged;
+            LastNameTextBox.TextChanged += LastNameTextBox_TextChanged;
             // 
             // FirstNameLabel
             // 
@@ -138,6 +138,7 @@
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(196, 31);
             FirstNameTextBox.TabIndex = 0;
+            FirstNameTextBox.TextChanged += FirstNameTextBox_TextChanged;
             // 
             // ListGroupBox
             // 
@@ -178,7 +179,7 @@
             Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Name = "ListExamplesForm";
-            Text = "Form1";
+            Text = "ListExamplesForm";
             InfoGroupBox.ResumeLayout(false);
             InfoGroupBox.PerformLayout();
             ListGroupBox.ResumeLayout(false);
