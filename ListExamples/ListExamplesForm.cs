@@ -39,8 +39,6 @@ namespace ListExamples
             }
         }
 
-
-
         void ClearListBox()
         {
             ListBox.Items.Clear();
